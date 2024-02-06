@@ -32,11 +32,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Hero(
-                tag: 'logo',
-                child: SizedBox(
-                  height: 200.0,
-                  child: Image.asset('images/logo.png'),
+              Flexible(
+                child: Hero(
+                  tag: 'logo',
+                  child: SizedBox(
+                    height: 200.0,
+                    child: Image.asset('images/logo.png'),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -83,6 +85,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       password: password,
                     );
                     if (newUser != null) {
+                      // ignore: use_build_context_synchronously
                       Navigator.pushNamed(context, ChatScreen.id);
                     }
 
